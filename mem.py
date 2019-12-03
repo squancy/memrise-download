@@ -27,7 +27,7 @@ for i in range(1, num + 1):
 	match = pattern1.findall(cont)
 	trans = pattern2.findall(cont)
 	tmp = list(zip(match, trans))
-	tst = [s1 + '-' + s2 for s1, s2 in tmp]
+	tst = [s1 + ' - ' + s2 for s1, s2 in tmp]
 	res += tst
 	print('URL No.', str(i) ,'is done')
 
