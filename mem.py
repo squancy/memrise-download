@@ -1,5 +1,6 @@
 import requests
 import re
+import html
 
 # Input user for a Memrise URL and the number of pages
 url = str(input('Please enter a Memrise URL (e.g.: https://www.memrise.com/course/1180494/spanish-mexico-1/): '))
@@ -34,8 +35,7 @@ print('Successfully collected every word')
 
 # Output result as a string of [foreign_word]-[meaning]
 for el in res:
-	s = bytes(el, encoding='utf-8').decode('utf-8')
 	if res.index(el) == len(res) - 1:
-		print(s)
+		print(html.unescape(el))
 	else:
-		print(s + ', ', end='')
+		print(html.unescape(el) + ', ', end='')
