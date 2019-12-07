@@ -4,6 +4,7 @@ import html
 
 # Input user for a Memrise URL and the number of pages
 url = str(input('Please enter a Memrise URL (e.g.: https://www.memrise.com/course/1180494/spanish-mexico-1/): '))
+delimiter = str(input('Delimiter to use: '))
 num = None
 
 # When wrong number is given handle error
@@ -27,7 +28,7 @@ for i in range(1, num + 1):
 	match = pattern1.findall(cont)
 	trans = pattern2.findall(cont)
 	tmp = list(zip(match, trans))
-	tst = [s1 + ' - ' + s2 for s1, s2 in tmp]
+	tst = [s1 + ' ' + delimiter + ' ' + s2 for s1, s2 in tmp]
 	res += tst
 	print('URL No.', str(i) ,'is done')
 
